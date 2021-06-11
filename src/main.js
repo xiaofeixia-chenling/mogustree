@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import '@/mock'; // mock数据
 import 'normalize.css/normalize.css'
 import 'vant/lib/toast/style';
 //全局使用样式，
@@ -13,4 +14,5 @@ import './style/index.scss';
 //----2 而像 import './style/index.scss'里的scss都是在重置具体元素的样式
 //没有定义什么css变量需要被.vue文件在<style></style>里引用赋值的，所以直接在main.js里写一遍全局引用就ok
 
-createApp(App).use(store).use(router).mount('#app')
+import mgjUI from '@/components'
+createApp(App).use(mgjUI).use(store).use(router).mount('#app')
